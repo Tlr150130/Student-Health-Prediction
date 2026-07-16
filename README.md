@@ -1,16 +1,17 @@
 # Student-Health-Prediction
-Kaggle competition submission. Treat this as a real ML problem provided by the business.
-Go through complete data science lifecycle. Add monitoring. How does the user interact with it?
-How do we deploy this on gcp?
-Add explainability
-Add sell to stakeholders
+
+Kaggle competition submission, treated as a real ML problem provided by the business — not just a leaderboard exercise. Full data science lifecycle, explainability, monitoring design, and a stakeholder narrative are all in scope, not optional polish.
+
+**Phase 1 — Kaggle submission (current focus).** Go through the complete data science lifecycle end-to-end and submit test predictions: business framing, data understanding, feature engineering, modeling, validation, explainability (SHAP), and a plan for monitoring/retraining. Success is beating a majority-class naive baseline on balanced accuracy.
+
+**Phase 2 — Deployment (after submission).** Package the trained model behind a serving endpoint and ship it with Docker: containerize the model API (near-term, required) and optionally add a UI on top (framework/scope TBD — decide once the endpoint exists). GCP (Terraform + Cloud Run) remains a documented future stretch goal, not required for Phase 2 to be considered done. See the Deployment section below for detail.
 
 # Business Question
 1. What is the business question?
     - For each patient, predict a health label (at-risk, unhealthy, fit) based on demographic, lifestyle, physical activity, and health metrics
 
 2. What business decision will this inform?
-    - Unsure. Determine who mihgt need medical intravention
+    - Unsure. Determine who might need medical intravention
 
 3. Who is the decision maker and what is their current process?
     - Unknown
@@ -86,10 +87,19 @@ Add sell to stakeholders
 4. CI/CD - tie to dvc
     - precommits
     - branch rules
-5. How to get this to gcp?
-    - Set up with terraform
-    - Set up cloudrun backend with docker
-    - Set up front-end
+5. Phase 2 - Create write-up and presentation
+    - Learn how to create presentations for ML projects
+    - add explainability
+    - Add section for next phase
+    - Assume this is for exec/stakeholder buy-in
+6. Phase 3 plan, in order
+    - Near-term / required
+        - Containerize the trained model behind a serving endpoint (e.g. FastAPI) with Docker
+        - Docker Compose to run the endpoint locally (and a UI container alongside it, if we build one)
+        - UI is optional and TBD — decide framework/scope once the endpoint exists; not required for Phase 3 to be "done"
+    - Future / stretch goal (not required)
+        - GCP deployment: Terraform-provisioned infra, Cloud Run hosting the same Docker image
+        - Revisit only after the local Docker deployment is working
 
 # Monitoring
 1. Performance monitoring
