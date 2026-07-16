@@ -5,8 +5,6 @@ How do we deploy this on gcp?
 Add explainability
 Add sell to stakeholders
 
-
-
 # Business Question
 1. What is the business question?
     - For each patient, predict a health label (at-risk, unhealthy, fit) based on demographic, lifestyle, physical activity, and health metrics
@@ -45,13 +43,17 @@ Add sell to stakeholders
 
 # Data
 1. Sources
-    - Transactional, behavioral, 3rd-party?
+    - Unknown
+    - Probably taken in person or done via surveys
 2. Quality
+    - Assume that the quality is good
 3. Cadence
+    - Unknown, assume monthly
 4. Class Balance
+    - Majority are at-risk
 5. Bias
-    - SUrvivorship
-    - Selection bias
+    - This depends on the how the data was surveyed
+    - The at-risk class being the majority suggests that the sampling was a routine survey across the entire university
 
 # Features
 1. Business intuition?
@@ -70,7 +72,7 @@ Add sell to stakeholders
 1. How was the train/test split done?
     - Stratified k-fold?
     - Holdout window?
-    - GOvernance-style?
+    - Governance-style?
         - Stability across segments?
         - Assumption documentation?
         - Sign-off process
